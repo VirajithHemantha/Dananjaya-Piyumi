@@ -15,8 +15,8 @@ Spreadsheet: https://docs.google.com/spreadsheets/d/1pl3N0tOkkaJevOhW7JamEmYu0vp
 7. Check it works: open `<web app URL>?action=wishes` in the browser. It should show `{"ok":true,"wishes":[]}`.
 
 Sheet columns:
-- **RSVP**: Timestamp, Full Name, Guests, Event, Dietary Notes
-- **WISH**: Timestamp, Name, Event, Message
+- **RSVP**: Timestamp, Full Name, Guests, Dietary Notes
+- **WISH**: Timestamp, Name, Message
 
 If you change `code.gs` later: **Deploy > Manage deployments > Edit (pencil) > Version: New version > Deploy**.
 This keeps the same URL.

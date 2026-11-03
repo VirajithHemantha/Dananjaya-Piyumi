@@ -12,7 +12,6 @@ interface Wish {
 }
 
 interface WishesSectionProps {
-  eventParam?: string;
   inviteeName?: string;
 }
 
@@ -26,7 +25,7 @@ const getRelativeTime = (date: Date) => {
   return `${Math.floor(hours / 24)}d ago`;
 };
 
-export const WishesSection: React.FC<WishesSectionProps> = ({ eventParam = 'both', inviteeName = '' }) => {
+export const WishesSection: React.FC<WishesSectionProps> = ({ inviteeName = '' }) => {
   const [wishes, setWishes] = useState<Wish[]>([]);
   const [formData, setFormData] = useState({ name: inviteeName, message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -64,7 +63,6 @@ export const WishesSection: React.FC<WishesSectionProps> = ({ eventParam = 'both
       await submitToSheet('WISH', {
         name: formData.name,
         message: formData.message,
-        event: eventParam,
       });
 
       const newWish: Wish = {

@@ -7,10 +7,9 @@ import { submitToSheet } from '../utils/sheets';
 interface RSVPFormProps {
   inviteeName?: string;
   eventName?: string;
-  eventParam?: string;
 }
 
-export const RSVPForm: React.FC<RSVPFormProps> = ({ inviteeName = '', eventName = 'the celebration', eventParam = 'both' }) => {
+export const RSVPForm: React.FC<RSVPFormProps> = ({ inviteeName = '', eventName = 'the celebration' }) => {
   const [formData, setFormData] = useState({
     fullName: inviteeName,
     guests: '1',
@@ -33,7 +32,6 @@ export const RSVPForm: React.FC<RSVPFormProps> = ({ inviteeName = '', eventName 
         fullName: formData.fullName,
         guests: formData.guests,
         dietaryNotes: formData.dietaryNotes,
-        event: eventParam,
       });
 
       setStatus('success');

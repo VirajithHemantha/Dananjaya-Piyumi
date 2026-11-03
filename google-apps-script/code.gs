@@ -5,13 +5,13 @@ const SPREADSHEET_ID = '1pl3N0tOkkaJevOhW7JamEmYu0vpwEo0Qd9iRRM4R1pU';
 const SHEETS = {
   RSVP: {
     name: 'RSVP',
-    headers: ['Timestamp', 'Full Name', 'Guests', 'Event', 'Dietary Notes'],
-    row: (p) => [new Date(), clean_(p.fullName), clean_(p.guests), clean_(p.event), clean_(p.dietaryNotes)],
+    headers: ['Timestamp', 'Full Name', 'Guests', 'Dietary Notes'],
+    row: (p) => [new Date(), clean_(p.fullName), clean_(p.guests), clean_(p.dietaryNotes)],
   },
   WISH: {
     name: 'WISH',
-    headers: ['Timestamp', 'Name', 'Event', 'Message'],
-    row: (p) => [new Date(), clean_(p.name), clean_(p.event), clean_(p.message)],
+    headers: ['Timestamp', 'Name', 'Message'],
+    row: (p) => [new Date(), clean_(p.name), clean_(p.message)],
   },
 };
 
@@ -49,13 +49,13 @@ function doGet(e) {
     if (lastRow < 2) return jsonResponse_({ ok: true, wishes: [] });
 
     const count = Math.min(lastRow - 1, MAX_WISHES_RETURNED);
-    const rows = sheet.getRange(lastRow - count + 1, 1, count, 4).getValues();
+    const rows = sheet.getRange(lastRow - count + 1, 1, count, 3).getValues();
     const wishes = rows
-      .filter((r) => r[1] && r[3])
+      .filter((r) => r[1] && r[2])
       .map((r) => ({
         createdAt: r[0] instanceof Date ? r[0].toISOString() : String(r[0]),
         name: String(r[1]),
-        message: String(r[3]),
+        message: String(r[2]),
       }))
       .reverse();
 
