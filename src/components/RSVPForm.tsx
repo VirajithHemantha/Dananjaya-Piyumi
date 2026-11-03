@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { CheckCircle, Loader2, Heart, Sparkles } from 'lucide-react';
 import { toast } from 'sonner';
+import { submitToSheet } from '../utils/sheets';
 
 interface RSVPFormProps {
   inviteeName?: string;
@@ -16,7 +17,6 @@ export const RSVPForm: React.FC<RSVPFormProps> = ({ inviteeName = '', eventName 
     dietaryNotes: '',
   });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-  const scriptUrl = "https://script.google.com/macros/s/AKfycbyDuWCJjIQ7egU3VZBzAndlosVuJyfZnbGaEKA47SuOcj6iSQQys1ksRSaphGAB37V_/exec";
 
   useEffect(() => {
     if (inviteeName) {
@@ -29,18 +29,11 @@ export const RSVPForm: React.FC<RSVPFormProps> = ({ inviteeName = '', eventName 
     setStatus('loading');
 
     try {
-
-      const payload = new FormData();
-      payload.append('sheet', 'RSVP');
-      payload.append('fullName', formData.fullName);
-      payload.append('guests', formData.guests);
-      payload.append('dietaryNotes', formData.dietaryNotes);
-      payload.append('event', eventParam);
-
-      await fetch(scriptUrl, {
-        method: 'POST',
-        mode: 'no-cors',
-        body: payload,
+      await submitToSheet('RSVP', {
+        fullName: formData.fullName,
+        guests: formData.guests,
+        dietaryNotes: formData.dietaryNotes,
+        event: eventParam,
       });
 
       setStatus('success');

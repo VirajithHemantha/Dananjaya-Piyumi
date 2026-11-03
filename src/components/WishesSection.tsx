@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Send, Loader2, Sparkles } from 'lucide-react';
 import { toast } from 'sonner';
+import { fetchWishes, submitToSheet } from '../utils/sheets';
 
 interface Wish {
   id: string;
@@ -35,7 +36,24 @@ export const WishesSection: React.FC<WishesSectionProps> = ({ eventParam = 'both
       setFormData(prev => ({ ...prev, name: inviteeName }));
     }
   }, [inviteeName]);
-  const scriptUrl = "https://script.google.com/macros/s/AKfycbyDuWCJjIQ7egU3VZBzAndlosVuJyfZnbGaEKA47SuOcj6iSQQys1ksRSaphGAB37V_/exec";
+
+  React.useEffect(() => {
+    let cancelled = false;
+    fetchWishes()
+      .then((rows) => {
+        if (cancelled) return;
+        setWishes(rows.map((row, i) => ({
+          id: `sheet-${i}-${row.createdAt}`,
+          name: row.name,
+          message: row.message,
+          createdAt: new Date(row.createdAt),
+        })));
+      })
+      .catch((error) => console.error('Error loading wishes: ', error));
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -43,16 +61,10 @@ export const WishesSection: React.FC<WishesSectionProps> = ({ eventParam = 'both
     setIsSubmitting(true);
 
     try {
-      const payload = new FormData();
-      payload.append('sheet', 'WISH');
-      payload.append('name', formData.name);
-      payload.append('message', formData.message);
-      payload.append('event', eventParam);
-
-      await fetch(scriptUrl, {
-        method: 'POST',
-        mode: 'no-cors',
-        body: payload,
+      await submitToSheet('WISH', {
+        name: formData.name,
+        message: formData.message,
+        event: eventParam,
       });
 
       const newWish: Wish = {
