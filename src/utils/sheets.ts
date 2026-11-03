@@ -1,6 +1,6 @@
 // Paste your Apps Script Web App URL here (Deploy > Manage deployments > Web app URL),
 // or set VITE_GOOGLE_APPS_SCRIPT_URL in .env / Vercel environment variables.
-const FALLBACK_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx_kRmABbGxPeXmV5yP_p-1iOHSOOkM7QYe1v_jqhfRqA0Eq9f9meUTf9HmAf6KXu1vKw/exec';
+const FALLBACK_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzmszCvgFMPR8Yhq6kPTMfmDGl3cOsHohn7yW2e3X3hkn8dw1igwtOmkal__YiaaSVwEg/exec';
 
 export const GOOGLE_SCRIPT_URL: string =
   import.meta.env.VITE_GOOGLE_APPS_SCRIPT_URL || FALLBACK_SCRIPT_URL;
