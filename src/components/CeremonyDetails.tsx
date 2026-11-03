@@ -53,43 +53,45 @@ export const CeremonyDetails: React.FC<CeremonyDetailsProps> = ({ event = 'both'
                 </div>
               </div>
 
-              {/* Poruwa Ceremony */}
-              <div className="relative group">
+              {/* Venue */}
+              <div className="relative group flex items-center min-h-[48px]">
                 <div className="absolute top-1/2 -translate-y-1/2 -left-[64px] sm:-left-[74px] w-12 h-12 bg-white rounded-full border border-brand-lavender/40 shadow-lg flex items-center justify-center group-hover:border-brand-plum group-hover:shadow-[0_4px_15px_rgba(176,137,104,0.3)] transition-all duration-500">
-                  <Clock className="w-5 h-5 text-brand-plum group-hover:scale-110 transition-transform duration-500" />
+                  <MapPin className="w-5 h-5 text-brand-plum group-hover:scale-110 transition-transform duration-500" />
                 </div>
                 <div>
-                  <h4 className="font-serif text-2xl sm:text-3xl text-stone-800 mb-3 group-hover:text-brand-plum transition-colors duration-500">
-                    Poruwa Ceremony
+                  <h4 className="font-serif text-2xl sm:text-3xl text-stone-800 group-hover:text-brand-plum transition-colors duration-500">
+                    Venue: Pharo Hotel, Nittambuwa
                   </h4>
-                  <div className="space-y-1.5 text-stone-500/90 font-serif text-base sm:text-lg">
-                    <p>
-                      <span className="font-semibold text-stone-700">Time:</span> 10.10 AM
-                    </p>
-                    <p className="leading-relaxed">
-                      <span className="font-semibold text-stone-700">Venue:</span> Pharo Hotel,<br className="hidden sm:block" /> Nittambuwa
-                    </p>
-                  </div>
                 </div>
               </div>
 
               {/* Wedding Function */}
               <div className="relative group">
                 <div className="absolute top-1/2 -translate-y-1/2 -left-[64px] sm:-left-[74px] w-12 h-12 bg-white rounded-full border border-brand-lavender/40 shadow-lg flex items-center justify-center group-hover:border-brand-plum group-hover:shadow-[0_4px_15px_rgba(176,137,104,0.3)] transition-all duration-500">
-                  <MapPin className="w-5 h-5 text-brand-plum group-hover:scale-110 transition-transform duration-500" />
+                  <Clock className="w-5 h-5 text-brand-plum group-hover:scale-110 transition-transform duration-500" />
                 </div>
                 <div>
                   <h4 className="font-serif text-2xl sm:text-3xl text-stone-800 mb-3 group-hover:text-brand-plum transition-colors duration-500">
                     Wedding Function
                   </h4>
-                  <div className="space-y-1.5 text-stone-500/90 font-serif text-base sm:text-lg">
-                    <p>
-                      <span className="font-semibold text-stone-700">Time:</span> 9.00 AM - 3.30 PM
-                    </p>
-                    <p className="leading-relaxed">
-                      <span className="font-semibold text-stone-700">Venue:</span> Pharo Hotel,<br className="hidden sm:block" /> Nittambuwa
-                    </p>
-                  </div>
+                  <p className="text-stone-500/90 font-serif text-base sm:text-lg">
+                    <span className="font-semibold text-stone-700">Time:</span> 9.00 AM - 3.30 PM
+                  </p>
+                </div>
+              </div>
+
+              {/* Poruwa Ceremony */}
+              <div className="relative group">
+                <div className="absolute top-1/2 -translate-y-1/2 -left-[64px] sm:-left-[74px] w-12 h-12 bg-white rounded-full border border-brand-lavender/40 shadow-lg flex items-center justify-center group-hover:border-brand-plum group-hover:shadow-[0_4px_15px_rgba(176,137,104,0.3)] transition-all duration-500">
+                  <Heart className="w-5 h-5 text-brand-plum group-hover:scale-110 transition-transform duration-500" />
+                </div>
+                <div>
+                  <h4 className="font-serif text-2xl sm:text-3xl text-stone-800 mb-3 group-hover:text-brand-plum transition-colors duration-500">
+                    Poruwa Ceremony
+                  </h4>
+                  <p className="text-stone-500/90 font-serif text-base sm:text-lg">
+                    <span className="font-semibold text-stone-700">Time:</span> 10.10 AM
+                  </p>
                 </div>
               </div>
 
