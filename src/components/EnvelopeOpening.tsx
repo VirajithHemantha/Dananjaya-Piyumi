@@ -206,7 +206,9 @@ export function EnvelopeOpening({
 
         .text-names {
           font-family: var(--font-names), "Cinzel Decorative", serif;
-          font-size: 60px;
+          font-size: 48px;
+          max-width: 100%;
+          overflow-wrap: anywhere;
           line-height: 1.1;
           color: #4a3a4d;
           margin: 0 0 10px 0;
@@ -375,7 +377,7 @@ export function EnvelopeOpening({
             height: 520px;
           }
           .text-names {
-            font-size: 46px;
+            font-size: 34px;
           }
           .text-ampersand {
             font-size: 32px;
@@ -450,9 +452,9 @@ export function EnvelopeOpening({
               </div>
 
               <h1 className="text-names">
-                Apsara
+                Dananjaya
                 <span className="text-ampersand">&</span>
-                Teshan
+                Piyumi
               </h1>
 
               <div className="divider">
@@ -464,8 +466,8 @@ export function EnvelopeOpening({
               <div className="text-details">
                 Request the honour of your presence<br />
                 to celebrate their marriage at<br />
-                <span className="text-church">Centrium Ballroom, Avenra Gardens</span><br />
-                Negombo
+                <span className="text-church">Pharo Hotel</span><br />
+                Nittambuwa
               </div>
             </div>
           </div>

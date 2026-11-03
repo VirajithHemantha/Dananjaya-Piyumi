@@ -6,6 +6,7 @@ import { EnvelopeOpening } from './components/EnvelopeOpening';
 import { InvitationContent } from './components/InvitationContent';
 import { Admin } from './components/Admin';
 import { INVITATION_IMAGE_URLS, preloadImages } from './utils/preloadImages';
+import { getInviteeFromLocation } from './utils/guest';
 
 const isAdminRoute = () => window.location.pathname === '/admin';
 
@@ -16,15 +17,13 @@ export default function App() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const params = new URLSearchParams(window.location.search);
-  const titleParam = params.get('title') || '';
-  const nameParam = params.get('name') || '';
   const eventParam = params.get('event') || 'both';
 
-  const fullInviteeName = `${titleParam} ${nameParam}`.trim();
+  const fullInviteeName = getInviteeFromLocation();
 
   let eventLabel = 'Our Wedding Celebration';
 
-  const weddingDate = new Date('2026-08-14T10:15:00');
+  const weddingDate = new Date('2026-12-03T10:10:00');
 
   useEffect(() => {
     if (isAdminRoute()) return;

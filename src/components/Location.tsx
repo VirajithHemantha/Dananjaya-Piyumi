@@ -9,22 +9,13 @@ interface LocationProps {
 export const Location: React.FC<LocationProps> = ({ event = 'both' }) => {
   const venues = [
     {
-      id: 'ceremony',
-      name: "St. Mary's Church",
-      city: "Negombo",
-      quote: `"A beautiful and sacred place where we will unite in holy matrimony."`,
-      liveLocationUrl: "https://maps.app.goo.gl/kPtBACZFd3AcKa1u9",
-      imageUrl: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Negombo%2C_St._Mary%27s_Church%2C_2025-07_CN-02.jpg",
-      label: "The Ceremony"
-    },
-    {
-      id: 'reception',
-      name: "Centrium Ballroom, Avenra Gardens",
-      city: "Negombo",
-      quote: `"A serene and elegant setting where we will celebrate our wedding function with joy and laughter."`,
-      liveLocationUrl: "https://maps.app.goo.gl/3HPomRVMHdbHUbo86",
-      imageUrl: "https://www.aha.lk/img/projects/1%20%281%291565002653.jpg",
-      label: "The Reception"
+      id: 'wedding',
+      name: "Pharo Hotel",
+      city: "Nittambuwa",
+      quote: `"A serene and elegant setting where we will celebrate our Poruwa ceremony and wedding with joy and laughter."`,
+      liveLocationUrl: "https://maps.app.goo.gl/CFjLwuRFHVszwEF77",
+      imageUrl: "/images/pharo-hotel.png",
+      label: "The Venue"
     }
   ];
 
@@ -103,7 +94,7 @@ export const Location: React.FC<LocationProps> = ({ event = 'both' }) => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
-                className="w-full lg:w-[65%] aspect-video sm:h-[350px] lg:aspect-auto lg:h-auto lg:min-h-[600px] relative z-10"
+                className="w-full lg:w-[65%] aspect-[3/4] sm:aspect-auto sm:h-[450px] lg:aspect-auto lg:h-auto lg:min-h-[600px] relative z-10"
               >
                 <div className="absolute -inset-4 sm:-inset-6 border-[2px] border-brand-lavender/30 rounded-[3rem] -z-10 translate-x-2 sm:translate-x-4 translate-y-2 sm:translate-y-4" />
                 
@@ -114,7 +105,7 @@ export const Location: React.FC<LocationProps> = ({ event = 'both' }) => {
                   <img
                     src={venue.imageUrl}
                     alt={`${venue.name} Location`}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-[2s] ease-in-out group-hover/map:scale-105"
+                    className="absolute inset-0 w-full h-full object-cover object-[center_65%] transition-transform duration-[2s] ease-in-out group-hover/map:scale-105"
                   />
 
                   {/* Decorative Location Pin Overlay */}
