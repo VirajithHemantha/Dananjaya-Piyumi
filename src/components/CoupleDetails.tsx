@@ -21,7 +21,7 @@ export const CoupleDetails: React.FC = () => {
             <div className="w-12 sm:w-20 h-[1px] bg-gradient-to-l from-transparent to-brand-plum/60" />
           </div>
           <h2 className="text-5xl sm:text-7xl font-names text-stone-800 tracking-tight drop-shadow-sm">
-            Dananjaya <span className="text-brand-plum font-light mx-2">&</span> Piyumi
+            Piyumi <span className="text-brand-plum font-light mx-2">&</span> Dananjaya
           </h2>
         </motion.div>
       </div>
@@ -33,15 +33,15 @@ export const CoupleDetails: React.FC = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-          className="text-center lg:text-right flex-1 lg:pr-10 order-4 lg:order-1"
+          className="text-center lg:text-left flex-1 lg:pl-10 order-4 lg:order-3"
         >
-          <div className="mb-4 flex flex-col items-center lg:items-end">
+          <div className="mb-4 flex flex-col items-center lg:items-start">
             <span className="text-brand-plum uppercase tracking-[0.4em] text-[10px] font-bold mb-3 block">The Groom</span>
             <h3 className="text-4xl sm:text-5xl font-names text-stone-800 mb-2 drop-shadow-sm">Dananjaya</h3>
             <p className="text-stone-700 font-century text-xs mb-2"></p>
             <p className="text-stone-500/90 font-serif italic text-base sm:text-lg">Son of Mr. M. Dissanayake & Mrs. J. R. Rathnayake</p>
           </div>
-          <div className="hidden lg:flex justify-end mt-8">
+          <div className="hidden lg:flex justify-start mt-8">
             <Heart className="w-6 h-6 text-brand-lavender/60 fill-brand-lavender/20 transform hover:scale-110 transition-transform cursor-pointer" />
           </div>
         </motion.div>
@@ -55,15 +55,15 @@ export const CoupleDetails: React.FC = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
-          className="text-center lg:text-left flex-1 lg:pl-10 order-2 lg:order-3"
+          className="text-center lg:text-right flex-1 lg:pr-10 order-2 lg:order-1"
         >
-          <div className="mb-4 flex flex-col items-center lg:items-start">
+          <div className="mb-4 flex flex-col items-center lg:items-end">
             <span className="text-brand-plum uppercase tracking-[0.4em] text-[10px] font-bold mb-3 block">The Bride</span>
             <h3 className="text-4xl sm:text-5xl font-names text-stone-800 mb-2 drop-shadow-sm">Piyumi</h3>
             <p className="text-stone-700 font-century text-xs mb-2"></p>
             <p className="text-stone-500/90 font-serif italic text-base sm:text-lg">Daughter of Mr. S. Pushpakumara & Mrs. D. P. Jayaneththi</p>
           </div>
-          <div className="hidden lg:flex justify-start mt-8">
+          <div className="hidden lg:flex justify-end mt-8">
             <Heart className="w-6 h-6 text-brand-lavender/60 fill-brand-lavender/20 transform hover:scale-110 transition-transform cursor-pointer" />
           </div>
         </motion.div>

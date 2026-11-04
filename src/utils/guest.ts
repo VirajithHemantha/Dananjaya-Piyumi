@@ -30,7 +30,7 @@ ${link}
 Your presence would truly mean the world to us, and we would be honored to celebrate this beautiful moment together.
 
 With love,
-❤️ ${COUPLE.groom} & ${COUPLE.bride}`;
+❤️ ${COUPLE.bride} & ${COUPLE.groom}`;
 
 // Reads the guest from /{displayName}, falling back to the older ?title=&name= links.
 export const getInviteeFromLocation = (location: Location = window.location) => {
