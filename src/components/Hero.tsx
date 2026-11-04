@@ -50,7 +50,7 @@ export const Hero: React.FC<HeroProps> = ({ event = 'both', inviteeName }) => {
         style={useParallax ? { y: y1, scale } : undefined}
       >
         <img
-          src="/ChatGPT Image Jul 5, 2026, 02_20_06 AM.png"
+          src="/images/hero-floral.jpg"
           alt="Wedding Background"
           loading="eager"
           fetchPriority="high"

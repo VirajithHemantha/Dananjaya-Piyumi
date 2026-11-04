@@ -1,8 +1,9 @@
 /** Preload image URLs so they are cached before the invitation is shown. */
-export function preloadImages(urls: string[]): Promise<void> {
+// Resolves after `timeoutMs` even if some images are still loading, so slow networks never block the invitation.
+export function preloadImages(urls: string[], timeoutMs = 2500): Promise<void> {
   const unique = [...new Set(urls.filter(Boolean))];
 
-  return Promise.all(
+  const loaded = Promise.all(
     unique.map(
       (url) =>
         new Promise<void>((resolve) => {
@@ -14,12 +15,12 @@ export function preloadImages(urls: string[]): Promise<void> {
         }),
     ),
   ).then(() => undefined);
+
+  const timeout = new Promise<void>((resolve) => window.setTimeout(resolve, timeoutMs));
+  return Promise.race([loaded, timeout]);
 }
 
 export const INVITATION_IMAGE_URLS = [
-  '/IMG_6940.JPG.jpeg',
-  '/IMG_6941.JPG.jpeg',
-  '/IMG_6942.JPG.jpeg',
-  '/IMG_6945.JPG.jpeg',
   '/ivory_satin_bow-removebg-preview.png',
+  '/images/hero-floral.jpg',
 ] as const;

@@ -25,7 +25,7 @@ export function EnvelopeOpening({
       completedRef.current = true;
       setExiting(true);
       window.setTimeout(() => onComplete(), 400);
-    }, 2200);
+    }, 1300);
 
     return () => window.clearTimeout(timer);
   }, [opened, readyToTransition, onComplete]);

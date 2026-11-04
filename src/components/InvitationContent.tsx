@@ -95,7 +95,7 @@ export function InvitationContent({
         <div className="py-24 sm:py-32 relative overflow-hidden">
           <div className="absolute inset-0">
             <img 
-              src="/ChatGPT Image Jul 5, 2026, 02_20_06 AM.png"
+              src="/images/hero-floral.jpg"
               alt="Countdown Background"
               className="w-full h-full object-cover" 
             />
